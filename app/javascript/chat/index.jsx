@@ -1,11 +1,11 @@
-// app/javascript/chat/index.jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import logger from 'redux-logger'
 import ReduxPromise from 'redux-promise';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import logger from 'redux-logger'
+import { BrowserRouter, Route, Switch, Routes } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 
 import App from './components/app';
 import messagesReducer from './reducers/messages_reducer';
@@ -14,22 +14,21 @@ const chatContainer = document.getElementById('chat_app');
 
 const initialState = {
   messages: [],
-  channels: ['general', 'react', 'paris'], // TODO: get that from Rails DB.
+  channels: JSON.parse(chatContainer.dataset.channels).map(c => c.name)
 };
 
 const reducers = combineReducers({
+  channels: (state = null, action) => state,
   messages: messagesReducer,
-  channels: (state = null, action) => state
 });
 
 const middlewares = applyMiddleware(logger, ReduxPromise);
-const store = createStore(reducers, initialState, middlewares);
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={createStore(reducers, initialState, middlewares)}>
     <BrowserRouter>
       <Switch>
-        <Route path="/channels/:channel" component={App} />
+        <Route path="/channels/:channel" exact component={App} />
       </Switch>
     </BrowserRouter>
   </Provider>,

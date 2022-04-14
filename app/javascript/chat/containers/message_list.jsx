@@ -27,7 +27,7 @@ class MessageList extends Component {
     this.props.fetchMessages(this.props.selectedChannel);
   }
 
-  render () {
+  render() {
     return (
       <div className="channel-container">
         <div className="channel-title">
@@ -49,7 +49,7 @@ class MessageList extends Component {
 function mapStateToProps(state) {
   return {
     messages: state.messages,
-    selectedChannel: state.selectedChannel
+    // selectedChannel: state.selectedChannel
   };
 }
 
