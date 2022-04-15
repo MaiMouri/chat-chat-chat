@@ -34,6 +34,8 @@ body {
 
 .channels-container > span {
   font-weight: 900;
+  font-size: 24px;
+  color: #383838;
 }
 
 .channels-container > ul {
@@ -52,7 +54,7 @@ body {
   cursor: pointer;
 }
 
-.channels-container > ul > li.active {
+.channels-container > ul > li.active > a {
   font-weight: 600;
   color: rgb(50, 70, 13)
 }
@@ -77,6 +79,8 @@ body {
 
 .channel-title > span {
   font-weight: 600;
+  font-size: 24px;
+  color: #383838;
 }
 
 .channel-content {
