@@ -13,6 +13,7 @@ function strToRGB(str) {
 }
 
 const Message = (props) => {
+  console.log('propsはここに表示', props);
   const time = new Date(props.created_at).toLocaleTimeString()
   const color = strToRGB(props.author);
   const content = emojify(props.content);
