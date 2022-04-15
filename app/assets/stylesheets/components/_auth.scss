@@ -1,0 +1,28 @@
+#new_user {
+  width: 50%;
+  margin: 0 auto;
+}
+
+// log in button
+// document.querySelector('#new_user > div.form-actions > input')
+.login-button {
+  font-size: 15px;
+  color: #ffffff;
+  margin: 0 auto;
+  background-color: #0d7f67;
+  border-radius: 8px;
+  background-color: #2a5c4b;
+  border-radius: 8px;
+}
+
+// Sign up & Forgot your password?
+// document.querySelector('body > a:nth-child(5)')
+// document.querySelector('body > a:nth-child(7)')
+.guide-button {
+  position: relative;
+  left: 200px;
+  top: 26px;
+  text-decoration: none;
+  color: gray;
+  font-size: 14px;
+}
