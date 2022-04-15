@@ -14,7 +14,7 @@ Message.destroy_all
 User.destroy_all
 Channel.destroy_all
 
-puts 'Database cleaerd!'
+puts 'Database cleared!'
 
 ActiveRecord::Base.connection.tables.each do |t|
   ActiveRecord::Base.connection.reset_pk_sequence!(t)
