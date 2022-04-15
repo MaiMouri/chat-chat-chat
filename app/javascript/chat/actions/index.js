@@ -1,5 +1,5 @@
-const BASE_URL = '/api/v1';
-// const BASE_URL = 'https://wagon-chat.herokuapp.com/api/v1';
+// const BASE_URL = '/api/v1';
+const BASE_URL = 'https://wagon-chat.herokuapp.com/api/v1';
 
 export const FETCH_MESSAGES = 'FETCH_MESSAGES';
 export const MESSAGE_POSTED = 'MESSAGE_POSTED';
