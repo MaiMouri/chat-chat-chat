@@ -4,6 +4,7 @@ class Api::V1::MessagesController < ApplicationController
   def index
     messages = @channel.messages.order('created_at ASC')
     render json: messages # see Message.as_json method
+
   end
 
   def create

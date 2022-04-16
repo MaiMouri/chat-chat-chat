@@ -1,11 +1,12 @@
-const BASE_URL = 'https://wagon-chat.herokuapp.com';
+// const BASE_URL = '/api/v1';
+const BASE_URL = 'https://wagon-chat.herokuapp.com/api/v1';
 
 export const FETCH_MESSAGES = 'FETCH_MESSAGES';
 export const MESSAGE_POSTED = 'MESSAGE_POSTED';
 export const CHANNEL_SELECTED = 'CHANNEL_SELECTED';
 
 export function fetchMessages(channel) {
-  const url = `${BASE_URL}/${channel}/messages`;
+  const url = `${BASE_URL}/channels/${channel}/messages`;
   const promise = fetch(url, { credentials: "same-origin" }).then(r => r.json());
 
   return {
@@ -15,7 +16,8 @@ export function fetchMessages(channel) {
 }
 
 export function createMessage(channel, author, content) {
-  const url = `${BASE_URL}/${channel}/messages`;
+  const url = `${BASE_URL}/channels/${channel}/messages`;
+  // const url = `${BASE_URL}/${channel}/messages`;
   const body = { content }; // ES6 destructuring
   const csrfToken = document.querySelector('meta[name="csrf-token"]').attributes.content.value;
   const promise = fetch(url, {
@@ -40,4 +42,11 @@ export function selectChannel(channel) {
     type: CHANNEL_SELECTED,
     payload: channel
   };
+}
+
+export function appendMessage(message) {
+  return {
+    type: MESSAGE_POSTED,
+    payload: message
+  }
 }

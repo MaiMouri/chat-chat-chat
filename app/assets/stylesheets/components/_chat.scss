@@ -13,7 +13,7 @@ body {
   padding: 10px;
   width: 60px;
   height: 100%;
-  background: #dbdbdb;
+  background: #092327;
   box-sizing: border-box;
 }
 
@@ -26,14 +26,16 @@ body {
 
 .channels-container {
   padding: 20px;
-  width: 220px;
+  width: 200px;
   height: 100%;
-  background: #f4f4f4;
+  background: #0B5351;
   box-sizing: border-box;
 }
 
 .channels-container > span {
   font-weight: 900;
+  font-size: 24px;
+  color: #383838;
 }
 
 .channels-container > ul {
@@ -52,9 +54,9 @@ body {
   cursor: pointer;
 }
 
-.channels-container > ul > li.active {
+.channels-container > ul > li.active > a {
   font-weight: 600;
-  color: black
+  color: rgb(50, 70, 13)
 }
 
 /* Column 3/3 *****************************************************************/
@@ -77,6 +79,8 @@ body {
 
 .channel-title > span {
   font-weight: 600;
+  font-size: 24px;
+  color: #383838;
 }
 
 .channel-content {
@@ -108,6 +112,7 @@ body {
 
 .message-container > p {
   margin: 5px 0 10px;
+  font-family: 'Indie Flower', cursive;
 }
 
 .channel-editor {
@@ -132,8 +137,33 @@ button {
   border-radius: 0 2px 2px 0;
   box-shadow: 0 1px 2px rgba(0,0,0,0.07);
   border: none;
-  background-color: #D23333;
+  background-color: #00a9a5;
   color: white;
   font-size: 14px;
   font-weight: 600;
+}
+
+@media screen and (max-width: 720px) {
+
+  .logo-container {
+    padding: 10px;
+    width: 60px;
+    height: 100%;
+    background: #092327;
+    box-sizing: border-box;
+  }
+
+  .channels-container {
+    padding: 20px;
+    width: 100px;
+    height: 100%;
+    background: #f4f4f4;
+    box-sizing: border-box;
+  }
+
+  .channel-container {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 170px);
+  }
 }
